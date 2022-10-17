@@ -3,11 +3,7 @@ module Telly
     def show
       const_name = params[:id]
 
-      begin
-        const = const_name.constantize
-      rescue NameError
-        raise ActiveRecord::RecordNotFound
-      end
+      const = Telly::Constant.find_by_name(const_name) or raise ActiveRecord::RecordNotFound
 
       file_name, line_number = Object.const_source_location(const_name)
 

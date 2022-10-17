@@ -3,12 +3,7 @@ module Telly
     def show
       const_name = params[:constant_id]
 
-      # TODO: consolidate with logic in ConstantController
-      begin
-        const = const_name.constantize
-      rescue NameError
-        raise ActiveRecord::RecordNotFound
-      end
+      const = Telly::Constant.find_by_name(const_name) or raise ActiveRecord::RecordNotFound
 
       begin
         meth = const.instance_method(params[:id].to_sym)
