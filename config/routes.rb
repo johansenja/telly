@@ -6,6 +6,7 @@ Telly::Engine.routes.draw do
 
     resources :model, only: %i[show] do
       resources :reflection, only: %i[show]
+      resources :column, only: %i[show]
     end
   end
 end
