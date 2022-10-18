@@ -23,6 +23,18 @@ module Telly
       nil
     end
 
+    def column(model_name, column_name)
+      get_path "/model/#{model_name}/column/#{column_name}"
+    rescue NotFoundError
+      nil
+    end
+
+    def model(model_name)
+      get_path "/model/#{model_name}"
+    rescue NotFoundError
+      nil
+    end
+
     private
 
     def get_path(path)
@@ -38,7 +50,7 @@ module Telly
       when Net::HTTPNotFound
         raise NotFoundError
       else
-        raise FailedRequestError, res.code
+        raise FailedRequestError, "Code: #{res.code}; body: #{res.body}"
       end
     end
 

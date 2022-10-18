@@ -10,13 +10,13 @@ what it can _currently_ do.
 
 - Linting for routes
   - Check that a specified controller action exists
-
-##### Coming soon:
-
 - Linting `belongs_to`, `has_many` and `has_one` relationships in models
   - Check that specified primary and foreign keys exist in a relationship
   - Check that foreign key and primary key types match
   - Check that the related model still has a table in the DB
+
+##### Coming soon:
+
 - Check that non-nullable columns in a DB table have corresponding not-null constraints at the
   application level
 - Check that ActiveRecord uniqueness validations have a corresponding index in the DB (performance)

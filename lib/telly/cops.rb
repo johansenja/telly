@@ -1,7 +1,6 @@
-require "active_support/core_ext/string/inflections"
-
-require_relative "cops/redundant_route"
 require_relative "client"
+require_relative "cops/redundant_route"
+require_relative "cops/invalid_reflection"
 
 module Telly
   class << self

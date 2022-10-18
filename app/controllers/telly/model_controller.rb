@@ -16,9 +16,16 @@ module Telly
         }
       end
 
+      table_name = begin
+          const.table_name
+        rescue ActiveRecord::TableNotSpecified
+          nil
+        end
+
       render json: {
         name: const.name,
         location: location,
+        table_name: table_name,
       }
     end
   end

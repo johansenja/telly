@@ -1,3 +1,5 @@
+require "active_support/core_ext/string/inflections"
+
 module Telly
   module Cops
     class RedundantRoute < RuboCop::Cop::Base
