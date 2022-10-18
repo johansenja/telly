@@ -34,7 +34,7 @@ module Telly
           default: column.default,
           default_function: column.default_function,
           collation: column.collation,
-          serial: column.serial,
+          serial: column.serial?,
           type: {
             sql_type: column.sql_type_metadata.sql_type,
             rails_type: column.sql_type_metadata.type,
