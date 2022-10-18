@@ -19,7 +19,13 @@ module Telly
                          PATTERN
       end
 
+      def on_new_investigation
+        @skip = !processed_source.file_path.to_s.match?(%r(config/routes(/[^/]+)?\.rb\z))
+      end
+
       def on_send(node)
+        return if @skip
+
         check = lambda do |path_node, options_node|
           next unless within_routes?(node)
 

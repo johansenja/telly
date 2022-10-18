@@ -21,6 +21,11 @@ what it can _currently_ do.
   application level
 - Check that ActiveRecord uniqueness validations have a corresponding index in the DB (performance)
 
+##### Stretch:
+
+- Check that properties mentioned in ActiveRecord's DSL correspond to DB columns in the model's
+  table
+
 ## Usage
 
 Install the gem and then that's it! Configure your `.rubocop.yml` to enable/disable whichever rules
